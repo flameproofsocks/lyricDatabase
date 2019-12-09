@@ -1,0 +1,33 @@
+DROP TABLE IF EXISTS basics;
+CREATE TABLE basics (
+	songID integer NOT NULL,
+	title text,
+	primaryArtistID integer,
+	datePublished date,
+	FOREIGN KEY (primaryArtistID) REFRENCES artists (artistID) ON DELETE CASCADE,-- many to one foreign key 
+	PRIMARY KEY (songID)
+);
+
+DROP TABLE IF EXISTS lyrics;
+CREATE TABLE lyrics(
+	songID integer NOT NULL,
+	verseType varchar(15),
+	lineNumber integer,
+	lyrics text,
+	rhyme varchar(10),
+	FOREIGN KEY (songID) REFRENCES basics (songID) ON DELETE CASCADE,-- many to one foreign key 
+	PRIMARY KEY (songID, lineNumber)
+);
+
+DROP TABLE IF EXISTS artists;
+CREATE TABLE artists(
+	artistID integer,
+	fullName text,
+	DOB date,
+	birthplace text,
+	PRIMARY KEY (artistID)
+);
+
+--QUERIES TO POPULATE ARTISTS TABLE
+INSERT into artists(artistID, fullName, DOB, birthplace) VALUES (1, 'Gazzy Garcia', '2000-08-17', 'Miami, Florida');
+INSERT into artists(artistID, fullName, DOB, birthplace) VALUES (2, 'Stokeley Clevon Goulbourne', '1996-04-18', 'Fort Lauderdale, Florida, U.S.');

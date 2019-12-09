@@ -1,6 +1,7 @@
 ----Overview
 The idea of this project is to create a database of lyrics and songs from various rappers, then mix them together to make an "original song". For previous execution of some of these programs see here: https://youtu.be/b5EfhOvQlGw
-This project uses code from John W Miller - https://github.com/johnwmillr/LyricsGenius
+
+This project uses code from John W Miller - https://github.com/johnwmillr/LyricsGenius 
 
 ----Setup
 You will need to install lyricsgenius from John W Miller in order to scrape lyrics from genius.com
@@ -32,3 +33,4 @@ This one doesn't take out swear words.
 
 ----Different Stats
 To gather the 10 most used and least used Ad-Libs you can run "AdLibs.py" which creates a python dictonary of ad-libs.
+"Tests.py" will determine the most and least diverse songs
